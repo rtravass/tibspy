@@ -133,3 +133,8 @@ git push -u origin main
 git remote add origin https://github.com/rtravass/tibspy.git
 git branch -M main
 git push -u origin main
+
+git status
+git add .
+git commit -m "Week5"
+git push -u origin main
