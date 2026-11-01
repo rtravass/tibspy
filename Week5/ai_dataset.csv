@@ -1,0 +1,11 @@
+ticket_id,text,priority
+T001,"My payment was deducted but my order was not placed",high
+T002,"I forgot my password and cannot login",medium
+T003,"The application is very slow today",medium
+T004,"I was charged twice for the same order",high
+T005,"How can I change my email address?",low
+T006,"My account has been locked after multiple login attempts",high
+T007,"The dashboard takes a long time to load",medium
+T008,"I want to update my billing information",low
+T009,"Money was deducted from my account but the transaction failed",high
+T010,"How do I reset my password?",low

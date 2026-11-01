@@ -1,0 +1,135 @@
+https://console.groq.com/keys
+
+mkdir pip_packages
+cd pip_packages
+
+pip wheel requests -w .
+
+cd path/to/pip_packages
+pip install * -f ./ --no-index
+python -c "import requests; print(requests.__version__)"
+
+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+++
+
+
+
+.env
+
+GROQ_API_KEY=
+
+
+chat.py
+
+import os
+from dotenv import load_dotenv
+from groq import Groq
+
+# Load environment variables
+load_dotenv()
+
+# Create Groq client
+client = Groq(
+    api_key=os.getenv("GROQ_API_KEY")
+)
+
+# Ask the model a question
+response = client.chat.completions.create(
+    model="openai/gpt-oss-20b",
+    messages=[
+        {
+            "role": "user",
+            "content": "Explain Python in one sentence."
+        }
+    ]
+)
+
+# Print the model response
+print(response.choices[0].message.content)
+
+
+
+
+pip install groq
+pip install dotenv
+
+==================================================================================
+
+https://codeshare.io/GbOwW7
+https://codeshare.io/50Wrym
+
+chmod 400 "myFirstEC2Instance-keypair.pem"
+
+ssh -i "myFirstEC2Instance-keypair.pem" ubuntu@ec2-15-252-97-224.ap-south-1.compute.amazonaws.com
+
+sudo apt update
+sudo apt upgrade -y
+
+sudo apt install awscli -y
+aws --version
+
+
+aws s3 ls    // to list the buckets
+
+
+aws sts get-caller-identity
+{
+    "UserId": "AROAZG23HNGFUCQJBCSAD:i-09db48af178927ee6",
+    "Account": "633162131851",
+    "Arn": "arn:aws:sts::633162131851:assumed-role/bits-s3-full-access/i-09db48af178927ee6"
+}
+
+
+
+aws s3 mb s3://rt-bits-bucket-sdr    //create bucket
+aws s3 cp customer_data.csv s3://rt-bits-bucket-sdr   //upload file to bucket
+
+
+==============================================================
+Check File Size:
+
+aws s3 ls s3://bucket/file.csv
+
+aws s3 rm s3://company-ai-data --recursive
+aws s3 rb s3://company-ai-data #empty bucket
+
+Delete Bucket and Contents in One Command
+aws s3 rb s3://company-ai-data --force
+
+
+==============================================================
+
+
+sudo apt update
+sudo apt upgrade -y
+
+sudo apt install awscli -y
+aws --version
+
+sudo apt install python3-venv python3-boto3  python3-pandas -y
+mkdir ai
+cd /home/ubuntu/ai
+python3 -m venv s3env
+source s3env/bin/activate
+python -m pip install --upgrade pip
+python -m pip install boto3 pandas
+
+
+==================================================================
+
+
+https://github.com/rtravass/tibspy.git
+
+…or create a new repository on the command line
+echo "# tibspy" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/rtravass/tibspy.git
+git push -u origin main
+
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/rtravass/tibspy.git
+git branch -M main
+git push -u origin main

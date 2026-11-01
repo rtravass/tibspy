@@ -1,0 +1,8 @@
+Employee_ID,First_Name,Last_Name,Email,Phone_Number,Hire_Date,Department,Job_Title,Salary,Manager_ID
+101,John,Doe,john.doe@company.com,555-0101,2021-03-15,Engineering,Software Engineer,95000,201
+102,Jane,Smith,jane.smith@company.com,555-0102,2019-06-01,Human Resources,HR Manager,85000,202
+103,Michael,Brown,michael.brown@company.com,555-0103,2023-01-10,Marketing,SEO Specialist,62000,203
+104,Emily,Davis,emily.davis@company.com,555-0104,2020-11-23,Finance,Financial Analyst,78000,204
+105,David,Wilson,david.wilson@company.com,555-0105,2022-07-19,Engineering,QA Engineer,80000,101
+106,Jessica,Taylor,jessica.taylor@company.com,555-0106,2018-02-14,Sales,Account Executive,90000,203
+107,James,Anderson,james.anderson@company.com,555-0107,2024-05-01,IT Support,Systems Administrator,70000,101

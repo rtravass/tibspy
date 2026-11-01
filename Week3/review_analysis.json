@@ -1,0 +1,27 @@
+[
+    {
+        "customer": "Ravi",
+        "review": "The product is excellent and easy to use",
+        "sentiment": "Positive"
+    },
+    {
+        "customer": "Anita",
+        "review": "Very slow delivery and poor packaging",
+        "sentiment": "Negative"
+    },
+    {
+        "customer": "John",
+        "review": "Amazing product, I really like it",
+        "sentiment": "Positive"
+    },
+    {
+        "customer": "Priya",
+        "review": "The product is bad and disappointing",
+        "sentiment": "Negative"
+    },
+    {
+        "customer": "Rahul",
+        "review": "The product is good and bad",
+        "sentiment": "Neutral"
+    }
+]
