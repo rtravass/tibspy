@@ -139,6 +139,8 @@ git add .
 git commit -m "Week5"
 git push -u origin main
 echo "secret_file.txt" >> .gitignore
+git pull origin main
+
 
 
 
