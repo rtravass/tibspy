@@ -1,234 +1,34 @@
-# class Customer: 
-#     def __init__(self, name, email):
-#         self.name = name
-#         self.email = email
-
-#     def display_info(self):
-#         print(self.name)
-#         print(self.email)
-
-# customer1 = Customer("Ryan","abc@gmail.com")
-# customer2 = Customer("Oli","xyz@gmail.com")
-# customer1.display_info()
-# customer2.display_info()
-
-#=============================Inheritance======================================
-
-# class Employee:
-#     def __init__(self, name):
-#         self.name = name
-
-#     def login(self):
-#         print(f"{self.name} logged in")
-
-# class DataEngineer(Employee):
-#     def build_pipeline(self):
-#         print(f"{self.name} is building a pipeline")
-
-# engineer = DataEngineer("Jo")
-# engineer.login()
-# engineer.build_pipeline()
-
-
-#=================================super() to reuse parent logic ===============
-
-# class Employee:
-#     def __init__(self, name):
-#         self.name = name
-
-# class DataEngineer(Employee):
-#     def __init__(self, name, tool):
-#         super().__init__(name)
-#         self.tool = tool
-
-# engineer = DataEngineer("Jo","Saw")
-# print(engineer.name)
-# print(engineer.tool)
-
-
-# ========================================= Composition ==============
-
-# class DatabaseConnection:
-#     def connect(self):
-#         print("Connect to a database")
-
-# class DataPipeline:
-#     def __init__(self):
-#         self.database = DatabaseConnection()
-
-#     def run(self):
-#         self.database.connect()
-#         print("Running data pipeline")
-
-# pipeline = DataPipeline()
-# pipeline.run()
-
-
-# output:
-# Connect to a database
-# Running data pipeline
-
-
-# ========== eg 2 for Composition=================:
-
-# class Engine:
-#     def __init__(self, horsepower: int):
-#         self.horsepower = horsepower
-
-#     def start(self):
-#         return "Vroom! The engine is running."
-
-# class Car:
-#     def __init__(self, make: str, model: str, hp: int):
-#         self.make = make
-#         self.model = model
-#         # Composition: The Car class creates and owns an Engine object
-#         self.engine = Engine(horsepower=hp) 
-
-#     def start_car(self):
-#         # The Car class delegates the starting behavior to the Engine object
-#         print(f"Starting the {self.make} {self.model}...")
-#         print(self.engine.start())
-
-# # Usage
-# my_car = Car(make="Toyota", model="Corolla", hp=139)
-# my_car.start_car()
-
-#==========================================================
-
-# myarr = [10,20,30]
-
-
-# myitterator = iter(myarr)
-# print(next(myitterator))
-# print(next(myitterator))
-# print(next(myitterator))
-
-
-
-# def count_up(limit):
-#     current = 1
-#     while current <= limit:
-#         yield current
-#         current += 1
-
-# counter = count_up(3) 
-# print(next(counter))
-# print(next(counter))
-# print(next(counter))
-
-
-# def add_logging(function):
-#     def wrapper():
-#         print("Starting function")
-#         function()
-#         print("function finished")
-#     return wrapper
-
-# @add_logging
-# def greet():
-#     print("Hello")
-
-# greet()
-
-
-# from typing import Optional
-
-# def find_user(user_id: int) -> Optional[str]:
-#     if user_id == 1:
-#         return "Alice"
-#     return None
-
-# print(find_user("ryan"))
-
-
-
-# max_retries = 3
-
-# for attempt in range(1, max_retries+1):
-#     try:
-#         print("Attempt: " + attempt)
-#         somefunc()
-#         print("Success")
-#         exit()
-#     except ConnectionError:
-
-
-# import csv
-
-# with open(
-#     "todelete.csv",
-#     "r",
-#     encoding="utf-8"
-# ) as file:
-
-#     reader = csv.DictReader(file)
-
-#     for row in reader:
-#         print(row)
-
-#========================================================================
-# import csv
-
-# with open(
-#     "customerwrite.csv",
-#     "w",
-#     newline="",
-#     encoding="utf-8"
-# ) as file:
-
-#     fieldnames = [
-#         "customer_id",
-#         "name",
-#         "age"
-#     ]
-
-#     writer = csv.DictWriter(
-#         file,
-#         fieldnames=fieldnames
-#     )
-
-#     writer.writeheader()
-
-#     writer.writerow({
-#         "customer_id": "C101",
-#         "name": "Rahul",
-#         "age": 32
-#     })
-
-#======================Week 5========================================
-
 # from pathlib import Path
 
-# folder = Path("C:\\Users\\ryant\\Desktop\\bits-2026\\python-course")
+# folder = Path("data")
 # files = list(folder.glob("*.csv"))
 # print(files)
 
-
-#========================================================================
+#==========================================================
 
 # from datetime import datetime
 
 # now = datetime.now()
 # print(now.strftime("%Y-%m-%d"))
 
-#========================================================================
+#==========================================================
 
 # import random
 
 # value = random.randint(1,20)
 # print(value)
 
-#========================================================================
+#==========================================================
 
-# import math
+# import math 
 
 # x = 17
 # y = 5
+
 # z = math.ceil(x/y)
 # print(z)
 
-#========================================================================
+#==================  GET   ================================
 
 # import requests
 
@@ -237,22 +37,22 @@
 # response = requests.get(
 #     url,
 #     headers={"Accept": "application/json"},
-#     timeout=10
+#     timeout=0
 # )
 
 # print(response.status_code)
 # print(response.json()["title"])
 
 
-#========================================================================
+#==================  POST   ================================
 
 # import requests
 
-# url = "https://jsonplaceholder.typicode.com/posts"
+# url = "https://jsonplaceholder.typicode.com/posts/1"
 
 # payload = {
 #     "title": "API Basics",
-#     "body": "Some body",
+#     "body": "Learning HTTP requests",
 #     "userId": 1
 # }
 
@@ -266,7 +66,7 @@
 # print(response.json()["title"])
 # print(response.json()["id"])
 
-#========================================================================
+#================== 
 
 
 # import requests
@@ -281,15 +81,46 @@
 #     print(data["title"])
 
 # except requests.exceptions.Timeout:
-#     print("The request timed out")
-# except requests.exceptions.HTTPError as error:
-#     print("HTTP Error: ", error)
-# except requests.exceptions.RequestException as error:
-#     print("Request failed: ", error)
-# except ValueError:
-#     print("The response was not a valid JSON")
+#     print("The request has timed out")
 
-#========================================================================
+# except requests.exceptions.HTTPError as error:
+#     print("HTTP error: ", error)
+
+# except requests.exceptions.RequestException as error:
+#     print("Request failed", error)
+
+# except ValueError:
+#     print("The response is not a valid Json")
+
+
+
+#================== API tokens ========================
+
+# import requests
+# import os
+
+# os.environ["API_BASE_URL"] = "https://jsonplaceholder.typicode.com"   # Set env variable
+# os.environ["API_TOKEN"] = "abcde123456"
+
+# print(os.environ["API_TOKEN"])
+
+# url = os.environ["API_BASE_URL"] + "/orders/123"
+
+# headers = {
+#     "Authorization": f"Bearer {os.environ['API_TOKEN']}"
+# }
+
+# response = requests.get(
+#     url,
+#     headers = headers,
+#     timeout = 10
+# )
+
+# print(response.status_code)
+
+
+
+#========================= Reuseable API Client ==========================
 
 # import os
 # import requests
@@ -298,170 +129,334 @@
 # API_TOKEN = os.environ["API_TOKEN"]
 # REQUEST_TIMEOUT = 10
 
-# url = API_BASE_URL + "/orders/123"
+# def get_order(order_id):
+#     url = f"{API_BASE_URL}/orders/{order_id}"
 
-# headers = {
-#     "Authorization": "Bearer {API_TOKEN}"
-# }
+#     headers = {
+#         "Authorization": f"Bearer {API_TOKEN}"
+#     }
 
-# response = requests.get(
-#     url,
-#     headers=headers,
-#     timeout=10
-# )
+#     response = requests.get(
+#         url,
+#         headers= headers,
+#         timeout= REQUEST_TIMEOUT
+#     )
 
-# print(response.status_code)
+#     response.raise_for_status()
+#     return response.json()
 
-#=========================Access Tokens, Refresh Tokens===============================================
+
+# def describe_order(order):
+#     order_id = order["id"]
+#     status = order["status"]
+
+#     return f"Order {order_id} is {status}"
 
 
-# import uuid
+# order_data = get_order(123)
+# message = describe_order(order_data)
+
+# print("message")
+
+
+
+
+#===================== Python Automation =================
+
+# from pathlib import Path
+
+# input_dir = Path("C:/Users/rtravass/Desktop/bits/bits-2026/python-course")
+# file_path = input_dir/"todelete.csv"
+
+# print(file_path)
+# print(file_path.exists())
+
+
+#=============keep paths and settings separate from processing logic==========
+
+# from pathlib import Path
+
+# INPUT_DIR = Path("")
+# OUTPUT_DIR = Path("")
+
+# OUTPUT_DIR.mkdir(parents=True, exist_ok= True)
+
+# print(INPUT_DIR)
+# print(OUTPUT_DIR)
+# print(OUTPUT_DIR.is_dir())
+
+
+#=========reusable script =========================
+
+# from pathlib import Path
+
+# INPUT_DIR = Path("")
+# OUTPUT_DIR = Path("")
+
+# def validate_input(file_path):
+#     if not file_path.is_file():
+#         raise FileNotFoundError(
+#             f"Input file not found: {file_path}"
+#         )
+#     return file_path
+
+# def prepare_output():
+#     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+
+# input_file = validate_input(INPUT_DIR/ "sales.csv")
+# prepare_output()
+
+# print("Input validated: ", input_file.name)
+# print("Output directory ready: ", OUTPUT_DIR.is_dir())
+
+
+
+#================divide a large dataset into manageable batches =======
+
+# records = list(range(1, 11))
+# batch_size = 3
+
+# for start in range(0, len(records), batch_size):
+#     batch = records[start: start + batch_size]
+#     print(batch)
+
+# op:
+# [1, 2, 3]
+# [4, 5, 6]
+# [7, 8, 9]
+# [10]
+
+
+
+#===================handle individual record failures ================
+
+# records = [10, 20, 50, -10]
+# success = []
+# failed = []
+
+# for record in records:
+#     try:
+#         if record < 0:
+#             raise ValueError("Negative amount")
+#         success.append(record)
+
+#     except ValueError as error:
+#         failed.append(record)
+#         print(f"Failed: {record} -> {error}")
+
+# print("Successful: ", success)
+# print("Failed records: ", failed)
+
+
+# op:
+# Failed: -10 -> Negative amount
+# Successful:  [10, 20, 50]
+# Failed records:  [-10]
+
+
+#================ log outcomes and avoid unnecessary reprocessing =============
+
+# records = [100, 200, 100, 300, 200]
+# processed = set()
+
+# for record in records:
+#     if record in processed:
+#         print(f"Skipped: {record}")
+#         continue
+
+#     processed.add(record)
+#     print(f"Processed: {record}")
+
+
+# op:
+# Processed: 100
+# Processed: 200
+# Skipped: 100
+# Processed: 300
+# Skipped: 200
+
+
+
+#======================== generate consolidated output =============
+
+# records = [100, 200, 100, 300, 200]
+# results = []
+# failed = []
+
+# for record in records:
+#     try:
+#         if record < 0:
+#             raise ValueError("Negative value")
+        
+#         results.append(record * 2)
+
+#     except ValueError:
+#         failed.append(record)
+
+# print("Results: ", results)
+# print("Failed: ", failed)
+# print("Total successful: ", len(results))
+
+
+
+#=================python threading for io bound tasks=================
+
+# import threading
 # import time
-# import requests
 
-# # 1. Simulate an Auth Server / Token Exchange
-# class MockAuthServer:
-#     def __init__(self):
-#         self.refresh_tokens = set()
+# def fetch_data(name):
+#     print(f"Starting {name}")
+#     time.sleep(2)
+#     print(f"Finished {name}")
 
-#     def login(self, username, password):
-#         if username == "admin" and password == "secret":
-#             access_token = str(uuid.uuid4())
-#             refresh_token = str(uuid.uuid4())
-#             self.refresh_tokens.add(refresh_token)
-#             return {
-#                 "access_token": access_token,
-#                 "refresh_token": refresh_token,
-#                 "expires_in": 3600
-#             }
-#         raise ValueError("Invalid credentials")
+# threads = []
 
-#     def refresh(self, current_refresh_token):
-#         if current_refresh_token in self.refresh_tokens:
-#             # In rotation, invalidate the old refresh token and issue a new one
-#             self.refresh_tokens.remove(current_refresh_token)
-            
-#             new_access_token = str(uuid.uuid4())
-#             new_refresh_token = str(uuid.uuid4())
-#             self.refresh_tokens.add(new_refresh_token)
-            
-#             return {
-#                 "access_token": new_access_token,
-#                 "refresh_token": new_refresh_token,
-#                 "expires_in": 3600
-#             }
-#         raise ValueError("Invalid or expired refresh token")
+# for name in ["A", "B", "C"]:
+#     t = threading.Thread(
+#         target=fetch_data, args=(name, )  #target=func to execute, 
+#     )                                   #args=supplies func argument as tuple
+#     threads.append(t)
+#     t.start()
 
-# # --- Example Usage ---
-# auth_server = MockAuthServer()
+# for t in threads:
+#     t.join() # * `.join()` tells the main program to **wait** until that specific thread finishes its work before moving on. 
 
-# # Step 1: Initial Login to get Access Token & Refresh Token
-# tokens = auth_server.login("admin", "secret")
-# print("Initial Login Response:", tokens)
+# print("All tasks completed")
+        
 
-# access_token = tokens["access_token"]
-# refresh_token = tokens["refresh_token"]
+#=================python threading for io bound tasks=================
 
-# # Step 2: Use the access token to call JSONPlaceholder (which accepts any mock data)
-# headers = {"Authorization": f"Bearer {access_token}"}
-# response = requests.get("https://jsonplaceholder.typicode.com/posts/1", headers=headers)
-# print("JSONPlaceholder API Response:", response.json())
+# from multiprocessing import Process
+# import os
 
-# # Step 3: Access token expires, use Refresh Token to get a new pair (Refresh Rotation)
-# new_tokens = auth_server.refresh(refresh_token)
-# print("Refreshed Tokens Response:", new_tokens)
-   
+# def calculate(number):
+#     total = sum( i * i for i in range(number))
+#     print(f"PID {os.getpid}: total = {total}")
+
+# if __name__ == "__main__":
+#     process = []
+
+#     for _ in range(2):
+#         p = Process(target=calculate, args=(1_00_00, ))
+#         process.append(p)  
+#         p.start()   #This tells the operating system to actually launch the process and execute the calculate function. It does not block the main code
+
+#     for p in process:
+#         p.join()  #This tells the main program to stop and wait for this specific process to finish executing before moving forward. Without join(), the main program might print "All processes completed" while the workers are still running in the background.
+
+#     print("All processes completed")
 
 
-#===========================================================
+# op:
+# PID 8432: total = 333283335000
+# PID 8433: total = 333283335000
+# All processes completed
 
-import time
-import requests
 
-BASE_URL = "https://dummyjson.com"
 
-# ==========================================
-# 1. INITIAL LOGIN
-# ==========================================
-print("[*] Logging in with short-lived tokens (1 minute expiry)...")
-login_response = requests.post(
-    f"{BASE_URL}/auth/login",
-    json={
-        "username": "emilys",
-        "password": "emilyspass",
-        "expiresInMins": 1  # DummyJSON minimum window is 1 minute
-    },
-    headers={"Content-Type": "application/json"}
-)
+#===================Asynchronous Programming with asyncio ================
 
-if login_response.status_code != 200:
-    print(f"[-] Login Failed: {login_response.text}")
-    exit(1)
+# import asyncio
 
-data = login_response.json()
-access_token = data.get("accessToken")
-refresh_token = data.get("refreshToken")
+# async def get_data():
+#     print("Starting request")
+#     await asyncio.sleep(2)
+#     print("Request completed")
 
-print(f"[+] Login Successful!")
-print(f"    Access Token:  {access_token[:25]}...")
-print(f"    Refresh Token: {refresh_token[:25]}...\n")
+# asyncio.run(get_data())
 
-# ==========================================
-# 2. VALID CALL (Before Expiration)
-# ==========================================
-print("[*] Accessing protected endpoint /auth/me with FRESH token...")
-headers = {"Authorization": f"Bearer {access_token}"}
-me_response = requests.get(f"{BASE_URL}/auth/me", headers=headers)
-print(f"    Status Code: {me_response.status_code} (Expected: 200)")
-print(f"    User Name:   {me_response.json().get('firstName')}\n")
+# op:
+# Starting request
+# Request completed
 
-# ==========================================
-# 3. FORCE EXPIRATION
-# ==========================================
-# We sleep for 35 seconds to simulate a short-lived expiration window. 
-# Depending on network latency and backend precision, you can increase this 
-# to 60+ seconds if DummyJSON strictly enforces the 60-second cutoff.
-sleep_duration = 35 
-print(f"[*] Sleeping for {sleep_duration} seconds to allow token to age...")
-time.sleep(sleep_duration)
 
-# Let's verify that the access token has aged/expired
-print("\n[*] Re-trying API with the same token after wait...")
-stale_response = requests.get(f"{BASE_URL}/auth/me", headers=headers)
-print(f"    Status Code: {stale_response.status_code} (If 401, token expired successfully)")
+# Four terms form the foundation of asyncio .
+# Coroutine. An asynchronous unit of work, defined with async def . It can pause and resume at
+# await points.
 
-# ==========================================
-# 4. REFRESH THE TOKENS
-# ==========================================
-print("\n[*] Rotating tokens using the /auth/refresh endpoint...")
-refresh_response = requests.post(
-    f"{BASE_URL}/auth/refresh",
-    json={
-        "refreshToken": refresh_token,
-        "expiresInMins": 1
-    },
-    headers={"Content-Type": "application/json"}
-)
+# async def . Defines an asynchronous function. Calling it creates a coroutine object; it does not
+# run the function to completion straight away.
 
-if refresh_response.status_code != 200:
-    print(f"[-] Refresh Failed: {refresh_response.text}")
-    exit(1)
+# await . Waits for an awaitable operation and lets the current coroutine pause while other tasks
+# progress.
 
-refreshed_data = refresh_response.json()
-new_access_token = refreshed_data.get("accessToken")
-new_refresh_token = refreshed_data.get("refreshToken") # The rotated refresh token
+# Event loop. Coordinates the ready tasks and resumes each one when the operation it awaited
+# can continue.
 
-print(f"[+] Token Rotation Successful!")
-print(f"    New Access Token:  {new_access_token[:25]}...")
-print(f"    New Refresh Token: {new_refresh_token[:25]}...\n")
 
-# ==========================================
-# 5. CALL APIS WITH NEW ACCESS TOKEN
-# ==========================================
-print("[*] Re-attempting API access using the NEW access token...")
-new_headers = {"Authorization": f"Bearer {new_access_token}"}
-final_response = requests.get(f"{BASE_URL}/auth/me", headers=new_headers)
 
-print(f"    Status Code: {final_response.status_code} (Expected: 200)")
-print(f"    User Email:  {final_response.json().get('email')}")
-print("[+] Workflow completed successfully.")
+#=====================================
+
+# import asyncio
+
+# async def fetch_data(name):
+#     print(f"Starting {name}")
+#     await asyncio.sleep(2)
+#     print(f"Finished {name}")
+#     return f"Data from {name}"
+
+# async def main():
+#     results = await asyncio.gather(
+#         fetch_data("A"),
+#         fetch_data("B"),
+#         fetch_data("C")
+#     )
+#     print(results)
+
+# asyncio.run(main())
+
+# op:
+# Starting A
+# Starting B
+# Starting C
+# Finished A
+# Finished B
+# Finished C
+# ['Data from A', 'Data from B', 'Data from C']
+
+# fetch_data prints a starting message, awaits a two second sleep to simulate waiting for a network
+# response, then prints a finishing message and returns a string. In main , asyncio.gather() receives
+# three calls, each of which creates a coroutine object, and the await in front of it waits until all three
+# have finished and collects their results.
+# All three starting messages appear before any finishing message, because each task reaches its
+# await and hands the event loop a chance to run the others. The three waits overlap, so the whole
+# run typically takes close to two seconds rather than six. This is one possible output. 
+
+
+# Note four
+# points:
+# gather() runs the awaitables concurrently.
+# The three asynchronous waits can overlap.
+# The order of the finishing messages is not guaranteed.
+# The results list keeps the order in which the awaitables were supplied, which is why it reads A,
+# B, C.
+
+
+#=================Handling errors in asynchronous tasks ===
+
+# import asyncio
+
+# async def fetch_data(name):
+#     try:
+#         await asyncio.sleep(1)
+#         if name == "B":
+#             raise RuntimeError("Request failed")
+#         return f"Data from {name}"
+#     except RuntimeError as error:
+#         return f"Error for {name} : {error}"
+
+# async def main():
+#     results = await asyncio.gather(
+#         fetch_data("A"),
+#         fetch_data("B"),
+#         fetch_data("C")
+#     )
+#     print(results)
+
+# asyncio.run(main())
+
+
+# op:
+# ['Data from A', 'Error for B : Request failed', 'Data from C']
+
